@@ -9,8 +9,27 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+ <nav class="navbar navbar-expand-md navbar-light" style="background-color: white;" d-flex p-2>
+      <% if user_signed_in? %>
+             <a class="navbar-brand" <%= link_to "Marvel Lounge", todo_lists_path, method: :get %></a>
+      <% else %>
+        <a class="navbar-brand" <%= link_to "Marvel Lounge", root_path, method: :get %></a>
+      <% end %>
+          <div class="navbar-nav">
+              <a class="nav-item nav-link active" </a>
+              <% if user_signed_in? %>
+                <a class="nav-item nav-link" <%= link_to "Logout", destroy_user_session_path, method: :delete  %></a>
+              <% else %>
+                <a class="nav-item nav-link" <%= link_to "Login", new_user_session_path, method: :get %></a>
+                <a class="nav-item nav-link" <%= link_to "Signup", new_user_registration_path, method: :get %></a>
+                 <a class="nav-item nav-link" <%= link_to "Sign in with GitHub", user_github_omniauth_authorize_path, method: :post %></a>
+              <% end %>
+            </div>
+          </div>
+    </nav>
   <body>
+ 
     <%= yield %>
+    
   </body>
 </html>
