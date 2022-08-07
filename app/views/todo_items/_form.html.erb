@@ -1,0 +1,6 @@
+<div class="listcontainer">
+<%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+ <%= f.text_field :content, placeholder: "Add film or TV Show" %>
+ <%= f.submit "Add to Watch List" %>
+<% end %>
+</div>

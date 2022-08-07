@@ -1,24 +1,11 @@
-# README
+Marvel Lounge
+It is a application that users can signup and make their own Watch List . Users also have the ablity to have followers and follow other people. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
+To use this app, clone the repo, then execute: $ bundle install
 
-Things you may want to cover:
+Usage
+1. Run rails db:migrate
+2. Run rails s
+3. Launch http://localhost:3000 in your browser
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

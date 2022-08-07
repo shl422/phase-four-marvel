@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PhaseFourMarvel</title>
+    <title>Marvel Lounge</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
- <nav class="navbar navbar-expand-md navbar-light" style="background-color: white;" d-flex p-2>
+ <nav class="navbar navbar-expand-md navbar-light">
       <% if user_signed_in? %>
-             <a class="navbar-brand" <%= link_to "Marvel Lounge", todo_lists_path, method: :get %></a>
+        <a class="navbar-brand" <%= link_to "Create List", todo_lists_path, method: :get %></a>
       <% else %>
         <a class="navbar-brand" <%= link_to "Marvel Lounge", root_path, method: :get %></a>
       <% end %>
-          <div class="navbar-nav">
-              <a class="nav-item nav-link active" </a>
+         <ul>
               <% if user_signed_in? %>
-                <a class="nav-item nav-link" <%= link_to "Logout", destroy_user_session_path, method: :delete  %></a>
+               <li>   <a class="nav-item nav-link" <%= link_to "Logout", destroy_user_session_path, method: :delete  %></a> </li>
               <% else %>
-                <a class="nav-item nav-link" <%= link_to "Login", new_user_session_path, method: :get %></a>
-                <a class="nav-item nav-link" <%= link_to "Signup", new_user_registration_path, method: :get %></a>
-                 <a class="nav-item nav-link" <%= link_to "Sign in with GitHub", user_github_omniauth_authorize_path, method: :post %></a>
+               <li>   <a class="nav-item nav-link" <%= link_to "Login", new_user_session_path, method: :get %></a></li>
+              <li>    <a class="nav-item nav-link" <%= link_to "Signup", new_user_registration_path, method: :get %></a></li>
+                <li>   <a class="nav-item nav-link" <%= link_to "Sign in with GitHub", user_github_omniauth_authorize_path, method: :post %></a> </li>
+                </ul>
               <% end %>
             </div>
           </div>
     </nav>
-  <body>
- 
+     
+     <body> 
     <%= yield %>
-    
-  </body>
+    </body>
 </html>
