@@ -1,4 +1,4 @@
-Marvel Lounge is an application that users can signup and make their own Watch List . Users also have the ablity to have followers and follow other people. 
+Marvel Lounge is an application that users can signup and make their own Watch List.
 
 Installation
 
